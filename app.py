@@ -131,5 +131,3 @@ def get_prediction():
     return jsonify(ret)
   else:
     return jsonify(ret)
-
-app.run()
