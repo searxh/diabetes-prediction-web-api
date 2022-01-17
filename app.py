@@ -1,4 +1,5 @@
 from flask import Flask,request,flash, request, redirect, url_for, Response, jsonify
+from flask_cors import CORS, cross_origin
 import pymongo
 import json
 import os
@@ -9,6 +10,7 @@ import joblib
 import time
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 
 client = pymongo.MongoClient("mongodb+srv://ISEdemo:databasepassword@cluster0.tpcqf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db_name = 'Project_db'
